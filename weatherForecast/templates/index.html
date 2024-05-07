@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather Forecast App</title>
+		<link rel="stylesheet" type="text/css" href="../static/styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Weather Forecast App</h1>
+			<div class="input-container">
+				<input type="text" id="city-input" placeholder="Enter city name..." />
+				<button onclick="fetchCurrentWeather()">Get Current Weather</button>
+				<button onclick="fetchWeatherForecast()">Get Weather Forecast</button>
+				<button onclick="fetchHourlyWeather()">Get Hourly Weather</button>
+			</div>
+			<div id="weather-output" class="output-container"></div>
+		</div>
+		<script src="../static/script.js"></script>
+	</body>
+</html>
