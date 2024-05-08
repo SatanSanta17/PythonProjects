@@ -1,0 +1,73 @@
+
+# Weather Forecasting Web Application Documentation
+
+## Overview
+This project is a web application designed to provide users with current weather information, weather forecasts, and hourly weather data for a given city. It utilizes the Flask framework for the backend server and interacts with the Tomorrow.io weather API to fetch weather data. The frontend is built using HTML, CSS, and JavaScript for user interaction and data display.
+
+## Project Structure
+The project directory structure is as follows:
+
+- **weatherforecasting**: Root folder containing project files.
+  - **static**: Folder containing static files such as images, scripts, and stylesheets.
+    - **image**: Directory to store dynamically generated weather plot images.
+    - **script.js**: JavaScript file for frontend functionality.
+    - **styles.css**: CSS file for styling the frontend.
+  - **templates**: Folder containing HTML templates for rendering web pages.
+    - **index.html**: Main HTML template for the homepage.
+  - **API_fetch.py**: Python module for interacting with the Tomorrow.io weather API.
+  - **app.py**: Flask application file defining routes and server configurations.
+  - **main.py**: Module for handling user input and displaying weather information.
+  - **plot.py**: Module for generating weather plot images using Matplotlib.
+
+## Setup and Installation
+1. Ensure Python and Flask are installed on your system.
+2. Clone the project repository from GitHub.
+3. Install required dependencies using `pip install -r requirements.txt`.
+4. Obtain an API key from Tomorrow.io and set it as an environment variable named `API_KEY2`.
+5. Run the Flask application using `python app.py`.
+6. Access the application in a web browser at `http://localhost:5000`.
+
+## Usage
+1. Enter the desired city name in the input field on the homepage.
+2. Click on the "Get Current Weather" button to fetch and display current weather information.
+3. Click on the "Get Weather Forecast" button to fetch and display a weather forecast plot for the next few days.
+4. Click on the "Get Hourly Weather" button to fetch and display an hourly weather plot for the current day.
+
+## Backend
+### `app.py`
+- Defines Flask routes for handling HTTP requests.
+- Renders HTML templates and serves static files.
+- Calls functions from `API_fetch.py` and `main.py` to fetch and process weather data.
+
+### `API_fetch.py`
+- Contains functions for making API requests to Tomorrow.io.
+- Retrieves current weather, weather forecast, and hourly weather data for a given city.
+
+### `main.py`
+- Handles user input and calls functions to display weather information.
+- Integrates with `API_fetch.py` to fetch weather data and with `plot.py` to generate plot images.
+
+### `plot.py`
+- Utilizes Matplotlib to generate plot images based on weather data.
+- Functions for plotting weather forecast and hourly weather data.
+
+## Frontend
+### `index.html`
+- Homepage template containing input field and buttons for user interaction.
+- Renders weather information and plot images dynamically.
+
+### `script.js`
+- Handles user interaction and AJAX requests.
+- Fetches weather data from the backend and updates the UI dynamically.
+
+## Dependencies
+- Flask: Web framework for Python.
+- Matplotlib: Data visualization library for Python.
+- Requests: HTTP library for making API requests.
+- Python-dotenv: Library for reading environment variables from `.env` file.
+
+## Future Improvements
+- Add error handling for API requests and user input validation.
+- Implement caching mechanism to improve performance and reduce API calls.
+- Enhance frontend design and user experience.
+- Support for multiple weather data providers and customization options.
